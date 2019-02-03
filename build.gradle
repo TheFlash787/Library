@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.spongepowered.plugin' version '0.9.0'
+    id 'com.github.johnrengelman.shadow' version '4.0.0'
 }
 
 group 'net.modrealms'
@@ -20,6 +21,7 @@ dependencies {
     compile 'org.spongepowered:spongeapi:7.1.0-SNAPSHOT'
     compile 'org.mongodb:mongo-java-driver:3.6.0'
     compile "org.projectlombok:lombok:1.16.16"
+    compile group: 'net.md-5', name: 'bungeecord-api', version: '1.12-SNAPSHOT'
     compile 'joda-time:joda-time:2.10'
     compile 'net.dv8tion:JDA:3.8.0_423'
     compile 'xyz.morphia.morphia:core:1.4.0'
@@ -39,8 +41,23 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
+shadowJar {
+    baseName = 'ModRealmsAPI'
+    classifier = null
+    version = project.version
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    minimize()
+}
+
+configurations {
+    compile.extendsFrom shadow
+}
+
 artifacts {
     archives sourcesJar
     archives javadocJar
+    archives shadowJar
 }
 

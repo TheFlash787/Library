@@ -1,5 +1,6 @@
 package net.modrealms.objects;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import net.dv8tion.jda.core.entities.Member;
@@ -12,93 +13,63 @@ import xyz.morphia.annotations.*;
 
 import java.util.*;
 
-@SuppressWarnings("Lombok")
+@SuppressWarnings("Lombok") @Data
 @Entity(value = "players", noClassnameStored = true)
 public class BasePlayer {
     @Id
     @Property("_id")
-    @Getter
     private ObjectId id;
-
     @Property("uuid")
     @Indexed
-    @Getter
     private UUID uuid;
-
-    @Getter @Setter
     @Property("username")
     private String name;
-
-    @Getter @Setter @Property("is-staff")
+    @Property("is-staff")
     private boolean isStaff;
-
-    @Setter @Property("ticket_ids")
+    @Property("ticket_ids")
     private List<ObjectId> ticketIds;
-
-    @Setter @Embedded("kits_Bought")
+    @Embedded("kits_Bought")
     private List<BoughtKit> kitsBought;
-
-    @Setter @Property("toggles")
+    @Property("toggles")
     private HashMap<String, Boolean> toggles;
-
     @Property("orb_balance")
     private Integer orbBalance;
-
-    @Setter @Property("application_ids")
+    @Property("application_ids")
     private List<ObjectId> applicationIds;
-
-    @Setter @Property("current_milestone")
+    @Property("current_milestone")
     private ObjectId milestone;
 
-    @Setter @Property("completed-milestones")
+    @Property("completed-milestones")
     private List<ObjectId> completedMilestones;
-
-    @Setter @Getter
     private HashMap<String, Integer> transportInventory;
-
-    @Setter @Getter @Property("donator_role")
+    @Property("donator_role")
     private DonatorRole donatorRole;
-
-    @Getter @Setter @Property("last_server")
+    @Property("last_server")
     private String lastServer;
-
-    @Getter @Setter @Property("verify_code")
+    @Property("verify_code")
     private String verifyCode;
-
-    @Getter @Setter @Property("display_name")
+    @Property("display_name")
     private String displayName;
-
-    @Getter @Setter @Property("progress_time")
+    @Property("progress_time")
     private Long progress;
-
-    @Getter @Setter @Property("discord_id")
+    @Property("discord_id")
     private String discordId;
-
     @Property("pending_messages")
     private List<String> pendingMessages;
-
-    @Getter @Setter @Property("first_vote_today")
+    @Property("first_vote_today")
     private Date firstVoteToday;
-
-    @Getter @Setter @Property("last_vote")
+    @Property("last_vote")
     private Date lastVote;
-
-    @Getter @Setter @Property("votes_today")
+    @Property("votes_today")
     private Integer votesToday;
-
-    @Getter @Setter @Property("votes")
+    @Property("votes")
     private Integer votes;
-
-    @Getter @Setter
     private Boolean makingTicket;
-
-    @Getter @Setter @Property("last_leave_date")
+    @Property("last_leave_date")
     private Date lastJoinDate;
-
-    @Getter @Setter @Property("last_join_date")
+    @Property("last_join_date")
     private Date lastLeaveDate;
-
-    @Getter @Setter @Property("afktime_seconds")
+    @Property("afktime_seconds")
     private long minutesAFK;
 
     public BasePlayer(){
@@ -179,11 +150,6 @@ public class BasePlayer {
         this.ticketIds.remove(ticket.getId());
     }
 
-    public void removeApplication(Application application){
-        checkApplicationsNull();
-        this.applicationIds.remove(application.getId());
-    }
-
 
     public void addToKitBought(OrbKit kit) {
         checkKitsBoughtNull();
@@ -237,11 +203,6 @@ public class BasePlayer {
     public void addTicket(Ticket ticket){
         checkTicketsNull();
         this.ticketIds.add(ticket.getId());
-    }
-
-    public void addApplication(Application application){
-        checkApplicationsNull();
-        this.applicationIds.add(application.getId());
     }
 
     public void clearPendingMessages(){

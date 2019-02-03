@@ -15,6 +15,11 @@ public class DAOManager {
     private RestrictionDAO restrictionDAO;
     private ServerDAO serverDAO;
     private TicketDAO ticketDAO;
+    private AnnouncementDAO announcementDAO;
+    private ChannelDAO channelDAO;
+    private CPlayerDAO cPlayerDAO;
+    private PartyDAO partyDAO;
+    private PunishmentDAO punishmentDAO;
 
     public DAOManager(){
         this.setBasePlayerDAO(new BasePlayerDAO());
@@ -25,5 +30,10 @@ public class DAOManager {
         this.setRestrictionDAO(new RestrictionDAO());
         this.setServerDAO(new ServerDAO());
         this.setTicketDAO(new TicketDAO());
+        this.setAnnouncementDAO(new AnnouncementDAO());
+        this.setChannelDAO(new ChannelDAO());
+        this.setCPlayerDAO(new CPlayerDAO());
+        this.setPartyDAO(new PartyDAO());
+        this.setPunishmentDAO(new PunishmentDAO());
     }
 }

@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-import net.modrealms.conversify.Conversify;
+import net.modrealms.api.ModRealmsAPI;
 import org.bson.types.ObjectId;
 import xyz.morphia.annotations.Entity;
 import xyz.morphia.annotations.Id;
@@ -45,12 +45,11 @@ public class CPlayer {
         //Morphia Constructor
     }
 
-    public CPlayer(UUID uuid){
-        ProxiedPlayer player = Conversify.getInstance().getProxy().getPlayer(uuid);
+    public CPlayer(ProxiedPlayer player){
         this.name = player.getName();
         this.displayName = player.getName();
         this.channel = "GLOBAL";
-        this.uuid = uuid;
+        this.uuid = player.getUniqueId();
         this.is_staff = false;
         this.visibleChannels = new ArrayList<>();
         this.visibleChannels.add("GLOBAL");
@@ -140,7 +139,7 @@ public class CPlayer {
     }
 
     public boolean hasParty(){
-        return ! Conversify.getInstance().getMongo().getDatastore().createQuery(Party.class).filter("players",this.getUuid()).asList().isEmpty();
+        return ! ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(Party.class).filter("players",this.getUuid()).asList().isEmpty();
     }
 
     public void removeParty(ObjectId id){

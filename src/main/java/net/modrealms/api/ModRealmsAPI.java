@@ -2,12 +2,12 @@ package net.modrealms.api;
 import lombok.Data;
 import lombok.Getter;
 import net.dv8tion.jda.core.JDA;
+import net.md_5.bungee.api.ProxyServer;
 import net.modrealms.api.data.DAOManager;
 import net.modrealms.api.data.Mongo;
 import net.modrealms.api.jda.JDAConnection;
 import org.slf4j.Logger;
 import org.spongepowered.api.Game;
-import sun.rmi.runtime.Log;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
@@ -21,9 +21,10 @@ public class ModRealmsAPI {
     public Mongo mongo;
     public Logger logger;
     public DAOManager daoManager;
+    public ProxyServer bungee;
     public HashMap<String, String> info;
 
-    public ModRealmsAPI(HashMap<String, String> info, @Nullable Game sponge, @Nullable Logger logger,boolean setupMongo,boolean setupJDA){
+    public ModRealmsAPI(HashMap<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge,@Nullable Logger logger,boolean setupMongo,boolean setupJDA){
         this.setInfo(info);
         if(logger != null){
             this.setLogger(logger);
@@ -34,6 +35,11 @@ public class ModRealmsAPI {
             this.setSponge(sponge);
             System.out.println("API: Successfully loaded Sponge");
         } else System.out.println("API: Sponge is not present!");
+
+        if(bungee != null){
+            this.setBungee(bungee);
+            System.out.println("API: Successfully loaded Bungee");
+        } else System.out.println("API: Bungee is not present!");
 
         if(setupMongo){
             this.setMongo(new Mongo());
@@ -52,7 +58,7 @@ public class ModRealmsAPI {
         try{
             return this.JDA;
         } catch(NullPointerException e){
-            System.out.println("JDA is not present!");
+            System.out.println("API: JDA is not present!");
             return null;
         }
     }
@@ -61,7 +67,16 @@ public class ModRealmsAPI {
         try{
             return this.sponge;
         } catch(NullPointerException e){
-            System.out.println("Sponge is not present!");
+            System.out.println("API: Sponge is not present!");
+            return null;
+        }
+    }
+
+    public ProxyServer getBungee(){
+        try{
+            return this.bungee;
+        } catch(NullPointerException e){
+            System.out.println("API: Bungee is not present!");
             return null;
         }
     }
@@ -70,7 +85,7 @@ public class ModRealmsAPI {
         try{
             return this.mongo;
         } catch(NullPointerException e){
-            System.out.println("Mongo/Morphia is not present!");
+            System.out.println("API: Mongo/Morphia is not present!");
             return null;
         }
     }

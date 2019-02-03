@@ -3,8 +3,8 @@ package net.modrealms.objects;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import net.modrealms.conversify.Conversify;
-import net.modrealms.conversify.mongo.CPlayerDAO;
+import net.modrealms.api.ModRealmsAPI;
+import net.modrealms.api.data.dao.CPlayerDAO;
 import org.bson.types.ObjectId;
 import xyz.morphia.annotations.Entity;
 import xyz.morphia.annotations.Id;
@@ -27,7 +27,7 @@ public class Party {
 
     private UUID leader;
 
-    private static CPlayerDAO cPlayerDAO = Conversify.getInstance().getDaoManager().getCPlayerDAO();
+    private static CPlayerDAO cPlayerDAO = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO();
 
     public Party(){
         //Morhpia Constructor

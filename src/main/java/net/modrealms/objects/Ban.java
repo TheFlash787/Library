@@ -2,7 +2,7 @@ package net.modrealms.objects;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.modrealms.conversify.handlers.TimeHandler;
+import net.modrealms.api.util.TimeParser;
 import org.bson.types.ObjectId;
 import xyz.morphia.annotations.Entity;
 import xyz.morphia.annotations.Id;
@@ -54,7 +54,7 @@ public class Ban {
         this.date = format.format(new Date());
         if(duration != null){
             Calendar calendar = Calendar.getInstance();
-            long milli = TimeHandler.toMilliSec(duration);
+            long milli = TimeParser.toMilliSec(duration);
             format.setCalendar(calendar);
             calendar.add(Calendar.MILLISECOND, (int) milli);
             this.expiration_date = format.format(calendar.getTime());

@@ -31,9 +31,9 @@ public class ServerDAO {
         return Optional.empty();
     }
 
-    public Server newServer(String serverName) {
+    public Server newServer() {
         //we dont update the server here as that will be done in the login logic
-        return new Server(serverName);
+        return new Server();
     }
 
     public void updateServer(Server server) {
