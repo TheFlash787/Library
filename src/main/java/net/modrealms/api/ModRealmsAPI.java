@@ -11,6 +11,7 @@ import org.spongepowered.api.Game;
 
 import javax.annotation.Nullable;
 import java.util.HashMap;
+import java.util.Map;
 
 @Data
 public class ModRealmsAPI {
@@ -22,36 +23,36 @@ public class ModRealmsAPI {
     public Logger logger;
     public DAOManager daoManager;
     public ProxyServer bungee;
-    public HashMap<String, String> info;
+    public Map<String, String> info;
 
-    public ModRealmsAPI(HashMap<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge,@Nullable Logger logger,boolean setupMongo,boolean setupJDA){
+    public ModRealmsAPI(Map<String, String> info,@Nullable ProxyServer bungee,@Nullable Game sponge,@Nullable Logger logger,boolean setupMongo,boolean setupJDA){
         this.setInfo(info);
         if(logger != null){
             this.setLogger(logger);
-            System.out.println("API: Successfully loaded SLF4J Logger");
-        } else System.out.println("API: Logger is not present!");
+            System.out.println("ModRealms API> Successfully loaded SLF4J Logger");
+        } else System.out.println("ModRealms API> Logger is not present!");
 
         if(sponge != null){
             this.setSponge(sponge);
-            System.out.println("API: Successfully loaded Sponge");
-        } else System.out.println("API: Sponge is not present!");
+            System.out.println("ModRealms API> Successfully loaded Sponge");
+        } else System.out.println("ModRealms API> Sponge is not present!");
 
         if(bungee != null){
             this.setBungee(bungee);
-            System.out.println("API: Successfully loaded Bungee");
-        } else System.out.println("API: Bungee is not present!");
+            System.out.println("ModRealms API> Successfully loaded Bungee");
+        } else System.out.println("ModRealms API> Bungee is not present!");
 
         if(setupMongo){
             this.setMongo(new Mongo());
             this.setDaoManager(new DAOManager());
-            System.out.println("API: Successfully loaded Mongo");
-        } else System.out.println("API: Mongo will not be loaded!");
+            System.out.println("ModRealms API> Successfully loaded Mongo");
+        } else System.out.println("ModRealms API> Mongo will not be loaded!");
 
         if(setupJDA){
             JDAConnection.connect();
             this.setJDA(JDAConnection.API);
-            System.out.println("API: Successfully loaded JDA");
-        } else System.out.println("API: JDA will not be loaded!");
+            System.out.println("ModRealms API>: Successfully loaded JDA");
+        } else System.out.println("ModRealms API> JDA will not be loaded!");
     }
 
     public JDA getJDA(){

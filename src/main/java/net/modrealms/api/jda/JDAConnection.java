@@ -11,7 +11,6 @@ import javax.security.auth.login.LoginException;
 
 public class JDAConnection {
     public static JDA API;
-
     public static void connect(){
         try {
             API = new JDABuilder(AccountType.BOT).setToken(ModRealmsAPI.getInstance().getInfo().get("token")).build().awaitReady();
