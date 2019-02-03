@@ -13,7 +13,7 @@ import xyz.morphia.annotations.*;
 
 import java.util.*;
 
-@SuppressWarnings("Lombok") @Data
+@Data
 @Entity(value = "players", noClassnameStored = true)
 public class BasePlayer {
     @Id

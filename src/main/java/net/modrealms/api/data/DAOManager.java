@@ -3,6 +3,7 @@ package net.modrealms.api.data;
 import lombok.Data;
 import net.modrealms.api.data.dao.*;
 import net.modrealms.objects.LoafPlayer;
+import net.modrealms.objects.StaffMember;
 import xyz.morphia.dao.DAO;
 
 @Data
@@ -19,6 +20,7 @@ public class DAOManager {
     private ChannelDAO channelDAO;
     private CPlayerDAO cPlayerDAO;
     private PartyDAO partyDAO;
+    private StaffDAO staffDAO;
     private PunishmentDAO punishmentDAO;
 
     public DAOManager(){
@@ -30,6 +32,7 @@ public class DAOManager {
         this.setRestrictionDAO(new RestrictionDAO());
         this.setServerDAO(new ServerDAO());
         this.setTicketDAO(new TicketDAO());
+        this.setStaffDAO(new StaffDAO());
         this.setAnnouncementDAO(new AnnouncementDAO());
         this.setChannelDAO(new ChannelDAO());
         this.setCPlayerDAO(new CPlayerDAO());

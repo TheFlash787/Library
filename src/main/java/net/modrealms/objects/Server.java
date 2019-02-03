@@ -83,8 +83,13 @@ public class Server {
     private boolean isOnline;
 
     public Server(){
+
+    }
+
+    public Server(String servername){
         this.id = new ObjectId();
         this.releasedate = new Date();
+        this.servername = servername;
         this.manager = "";
         this.modpack = "";
         this.version = "";
