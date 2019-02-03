@@ -27,6 +27,10 @@ public class ModRealmsAPI {
 
     public ModRealmsAPI(Map<String, String> info,@Nullable ProxyServer bungee,@Nullable Game sponge,@Nullable Logger logger,boolean setupMongo,boolean setupJDA){
         this.setInfo(info);
+        System.out.println("Input Info:");
+        info.forEach((st, st1) -> System.out.println(st + " " + st1));
+        System.out.println("Class Info:");
+        this.info.forEach((st, st1) -> System.out.println(st + " " + st1));
         if(logger != null){
             this.setLogger(logger);
             System.out.println("ModRealms API> Successfully loaded SLF4J Logger");
