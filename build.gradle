@@ -58,6 +58,6 @@ configurations {
 artifacts {
     archives sourcesJar
     archives javadocJar
-    archives shadowJar
+    //archives shadowJar
 }
 
