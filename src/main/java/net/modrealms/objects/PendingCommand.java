@@ -1,19 +1,19 @@
-package net.modrealms.libs.objects;
+package net.modrealms.objects;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.annotations.Property;
-import org.mongodb.morphia.annotations.Reference;
+import xyz.morphia.annotations.Entity;
+import xyz.morphia.annotations.Id;
+import xyz.morphia.annotations.Property;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity(value = "pending-commands", noClassnameStored = true)
 public class PendingCommand {
-    @Getter @Id @Property("_id")
+    @Getter @Id
+    @Property("_id")
     private ObjectId id;
     @Getter @Property("commands")
     private List<String> commands;

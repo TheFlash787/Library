@@ -2,17 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcd46744-e0df-43da-a67d-a5b26d8ce0ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BasePlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BoughtKit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BrowniePoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Interview.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/OrbKit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/PendingCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffMember.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffWarning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/ModRealmsAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/DAOManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/Mongo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/BasePlayerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafPlayerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/OrbKitDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ProgressDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/RestrictionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ServerDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/TicketDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/api/jda/JDAConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Announcement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Ban.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/CPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Channel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/DonatorRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Kick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Loaf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/LoafPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Mute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Party.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/ProgressMilestone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictedItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictingAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Warning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/WorldLoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BasePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/BasePlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BoughtKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/BoughtKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BrowniePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/BrowniePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Interview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/OrbKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/OrbKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/PendingCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/PendingCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/StaffMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/modrealms/objects/StaffWarning.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -32,43 +68,58 @@
     <session id="-396678581">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="1" />
-          <entry key="java" value="12" />
+          <entry key="gradle" value="3" />
+          <entry key="java" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="12" />
+          <entry key="Groovy" value="3" />
+          <entry key="JAVA" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gradle" value="2" />
-          <entry key="java" value="3" />
+          <entry key="dummy" value="22" />
+          <entry key="gradle" value="31" />
+          <entry key="java" value="2046" />
+          <entry key="txt" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="3" />
+          <entry key="Groovy" value="31" />
+          <entry key="JAVA" value="2046" />
+          <entry key="PLAIN_TEXT" value="38" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BasePlayer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/ModRealmsAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,16 +128,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BrowniePoint.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/jda/JDAConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BoughtKit.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/DAOManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/Mongo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="33" column="134" selection-start-line="33" selection-start-column="134" selection-end-line="33" selection-end-column="134" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/PendingCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Warning.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-78">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/BoughtKit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
@@ -95,7 +197,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Interview.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/StaffMember.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
@@ -103,56 +205,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/OrbKit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/PendingCommand.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictingAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Role.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffMember.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffWarning.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="170">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -165,6 +222,24 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>JDAHandler.API</find>
+      <find>mrutils</find>
+      <find>MRUtils</find>
+      <find>Sponge.getServer()</find>
+      <find>Sponge</find>
+      <find>loafloader</find>
+      <find>org.mongodb.morphia.</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>Api.getInstance().getJDA()</replace>
+      <replace>ModRealmsAPI</replace>
+      <replace>api</replace>
+      <replace>xyz.morphia.</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -216,9 +291,18 @@
                 <option name="name" value="buildDependents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipseClasspath" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays the sub-projects of root project 'library'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Cleans all Eclipse files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipse" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles main classes." />
@@ -236,9 +320,17 @@
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipseProject" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Generates Gradle wrapper files." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="sourcesJar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles test classes." />
@@ -249,6 +341,15 @@
                 <option name="description" value="Generates Javadoc API documentation for the main source code." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="generateMetadata" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates the Eclipse classpath file." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipseClasspath" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
@@ -271,6 +372,10 @@
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="cleanEclipseJdt" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Initializes a new Gradle build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="init" />
@@ -284,6 +389,10 @@
                 <option name="description" value="Compiles main Java source." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadocJar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the insight into a specific dependency in root project 'library'." />
@@ -316,6 +425,11 @@
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Generates all Eclipse files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipse" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Processes test resources." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processTestResources" />
@@ -326,6 +440,11 @@
                 <option name="name" value="help" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Generates the Eclipse JDT settings file." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipseJdt" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="build" />
@@ -334,6 +453,11 @@
                 <option name="description" value="Assembles and tests this project and all projects it depends on." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates the Eclipse project file." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="eclipseProject" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the properties of root project 'library'." />
@@ -347,9 +471,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6196159691151" />
+        <entry key="$PROJECT_DIR$" value="6196333282700" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="767417412" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3549585211" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2007532874" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="2151416642" />
       </map>
@@ -364,6 +488,30 @@
                   <entry key="$PROJECT_DIR$">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.org.spongepowered/spongegradle/0.9.0/9802ec33ff8e676cc9bd717df51b597fe66551a1/spongegradle-0.9.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/1464bba4356346fbb8b71827a90b16c85b927542/httpmime-4.5.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/plugin-meta/0.4.1/7db7c6d2dcc7a9fdb74bee95c0ced94294cc00bd/plugin-meta-0.4.1-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.2/ed60d4287d18996bc940f26656c570532b20d863/asm-5.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/4969730c661fff76fa7f9d4c7c61545817f5b033/httpclient-4.5.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/7ca0efbeb87ca845b5d7a0ac9c21a4b7b95f7b28/guava-17.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a6dc5db8a12928e583bd3f23e72d3ab611ecd58f/gson-2.2.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/57cc0a7af46d66754e632bddc558a913b9e66ac3/httpcore-4.4.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.org.spongepowered/spongegradle/0.9.0/55fbeb404da1a3e58d22c764cd15e75db08169e9/spongegradle-0.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.3/889fd6d061bb63b99dd5c6aba35a555ae863de52/httpmime-4.5.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/plugin-meta/0.4.1/419e2f7cb6f7ccdb13cbba0c46021c3e2f0fefda/plugin-meta-0.4.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/5.2/4ce3ecdc7115bcbf9d4ff4e6ec638e60760819df/asm-5.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.3/d1577ae15f01ef5438c5afc62162457c00a34713/httpclient-4.5.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.6/e3fd8ced1f52c7574af952e2e6da0df8df08eb82/httpcore-4.4.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar" />
+                          </list>
+                        </option>
                         <option name="path" value="$PROJECT_DIR$" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
@@ -477,9 +625,38 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Activity.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BasePlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/ProgressMilestone.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/PendingCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/API.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/Api.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/DAOManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ApplicationDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ServerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/RestrictionDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ProgressDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/OrbKitDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/LoafPlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/WorldLoc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/BasePlayerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Loaf.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/DAOManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafPlayerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictedItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictingAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/BasePlayer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/DonatorRole.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Ticket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/TicketDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Server.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/jda/JDAConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/data/Mongo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/objects/Warning.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/modrealms/api/ModRealmsAPI.java" />
       </list>
     </option>
   </component>
@@ -531,7 +708,47 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="modrealms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modrealms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modrealms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modrealms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modrealms" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="jda" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -545,9 +762,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549040059500" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549215424222" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sonic\Desktop\Projects\Library\src\main\java\net\modrealms\objects" />
+      <recent name="C:\Users\sonic\Desktop\Projects\Library\src\main\java\net\modrealms\libs\objects" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -573,6 +799,25 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="Unnamed" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -608,47 +853,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549039879331</updated>
-      <workItem from="1549039881399" duration="291000" />
+      <workItem from="1549039881399" duration="554000" />
+      <workItem from="1549123589954" duration="378000" />
+      <workItem from="1549134342213" duration="14000" />
+      <workItem from="1549208456436" duration="6802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291000" />
+    <option name="totallyTimeSpent" value="7748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" visible="true" weight="0.32944915" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Statistic" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34322035" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32944915" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Statistic" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,99 +906,415 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/OrbKit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        <state relative-caret-position="221">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Activity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ApplicationDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BrowniePoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BoughtKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Interview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/PendingCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/StaffWarning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/BasePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="538">
+          <caret line="98" column="5" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/libs/objects/OrbKit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ProgressDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/OrbKitDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar!/org/slf4j/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/WorldLoc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/BasePlayerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/LoafPlayerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#2718#2719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/RestrictionDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Ticket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/TicketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/dao/ServerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Interview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/StaffWarning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictedItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="41" column="3" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/ProgressMilestone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/LoafPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/BrowniePoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/BasePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Loaf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/DonatorRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/BoughtKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/DAOManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/data/Mongo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="33" column="134" selection-start-line="33" selection-start-column="134" selection-end-line="33" selection-end-column="134" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/jda/JDAConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/StaffMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/RestrictingAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/CPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/PendingCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/objects/Warning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/modrealms/api/ModRealmsAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Minecraft</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 3.6 interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>library_main|library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4069364" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
