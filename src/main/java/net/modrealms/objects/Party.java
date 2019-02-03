@@ -27,21 +27,19 @@ public class Party {
 
     private UUID leader;
 
-    private static CPlayerDAO cPlayerDAO = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO();
-
     public Party(){
         //Morhpia Constructor
     }
 
     public Party(UUID leader){
         this.id = new ObjectId();
-        this.name = cPlayerDAO.getPlayer(leader).get().getName()+"'s Party";
+        this.name = "New Party";
         this.players = new ArrayList<>();
         this.leader = leader;
         this.players.add(leader);
-        CPlayer cLeader = cPlayerDAO.getPlayer(leader).get();
-        cLeader.setPartyId(this.id);
-        cPlayerDAO.updatePlayer(cLeader);
+//        CPlayer cLeader = cPlayerDAO.getPlayer(leader).get();
+//        cLeader.setPartyId(this.id);
+//        cPlayerDAO.updatePlayer(cLeader);
     }
 
 }

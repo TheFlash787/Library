@@ -45,8 +45,8 @@ public class ModRealmsAPI {
         } else System.out.println("ModRealms API> Bungee is not present!");
 
         if(setupMongo){
-            this.setDaoManager(new DAOManager());
             this.setMongo(new Mongo());
+            this.setDaoManager(new DAOManager());
             System.out.println("ModRealms API> Successfully loaded Mongo");
         } else System.out.println("ModRealms API> Mongo will not be loaded!");
 

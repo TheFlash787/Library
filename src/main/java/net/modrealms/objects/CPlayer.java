@@ -139,7 +139,7 @@ public class CPlayer {
     }
 
     public boolean hasParty(){
-        return ! ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(Party.class).filter("players",this.getUuid()).asList().isEmpty();
+        return !ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(Party.class).filter("players",this.getUuid()).asList().isEmpty();
     }
 
     public void removeParty(ObjectId id){

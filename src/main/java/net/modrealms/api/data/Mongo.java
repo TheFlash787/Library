@@ -30,7 +30,6 @@ public class Mongo {
         String pass = ModRealmsAPI.getInstance().getInfo().get("mongo_pass");
         String host = ModRealmsAPI.getInstance().getInfo().get("mongo_host");
         String db = ModRealmsAPI.getInstance().getInfo().get("mongo_db");
-
         MongoClientURI uri = new MongoClientURI("mongodb://" + user + ":" + pass + "@" + host + ":27017/" + db + "?authSource=admin");
 
         MongoClient mongoClient = new MongoClient(uri);
