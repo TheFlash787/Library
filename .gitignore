@@ -1,0 +1,15 @@
+/*
+!/.github/
+!/gradle/
+!/src/
+!/lib/
+!/.gitignore
+!/build.gradle
+!/gradlew*
+!/CHANGELOG*.md
+!/LICENSE.md
+!/README*.md
+!/settings.gradle
+!/intellij-java-google-style.xml
+!/.travis.yml
+!/gradle.properties
