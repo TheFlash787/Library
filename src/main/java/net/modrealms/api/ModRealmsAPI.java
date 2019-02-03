@@ -25,14 +25,9 @@ public class ModRealmsAPI {
     public ProxyServer bungee;
     public Map<String, String> info;
 
-    public ModRealmsAPI(Map<String, String> info,@Nullable ProxyServer bungee,@Nullable Game sponge,@Nullable Logger logger,boolean setupMongo,boolean setupJDA){
+    public ModRealmsAPI(Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
         instance = this;
         this.setInfo(info);
-
-        if(logger != null){
-            this.setLogger(logger);
-            System.out.println("ModRealms API> Successfully loaded SLF4J Logger");
-        } else System.out.println("ModRealms API> Logger is not present!");
 
         if(sponge != null){
             this.setSponge(sponge);

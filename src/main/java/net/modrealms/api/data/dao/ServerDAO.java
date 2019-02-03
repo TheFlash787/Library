@@ -9,7 +9,7 @@ import xyz.morphia.query.Query;
 import java.util.Optional;
 
 public class ServerDAO {
-    private static final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
+    private static final ModRealmsAPI api = ModRealmsAPI.getInstance();
     private static final Datastore datastore = api.getMongo().getDatastore();
 
     public Optional<Server> getServerById(ObjectId objectId) {

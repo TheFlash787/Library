@@ -28,7 +28,7 @@ public class TicketDAO {
     @Getter
     private HashMap<UUID, ObjectId> cachedTickets = new HashMap<>();
 
-    private static final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
+    private static final ModRealmsAPI api = ModRealmsAPI.getInstance();
     private static final Datastore datastore = api.getMongo().getDatastore();
 
     public Ticket createTicket(BasePlayer player,Server server,@Nullable String message,WorldLoc location,Boolean launcher,Boolean bugs,Boolean recipe,Boolean lag,Boolean suggestion,Boolean other) {

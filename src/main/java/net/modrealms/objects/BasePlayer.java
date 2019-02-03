@@ -284,7 +284,7 @@ public class BasePlayer {
     }
 
     public boolean isStaff(){
-        return !ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(StaffMember.class).filter("baseplayer",this).asList().isEmpty();
+        return !ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(StaffMember.class).filter("baseplayer",this).asList().isEmpty() || this.isStaff;
 
     }
 

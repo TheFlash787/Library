@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class LoafDAO {
-    private static final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
+    private static final ModRealmsAPI api = ModRealmsAPI.getInstance();
     private static final Datastore datastore = api.getMongo().getDatastore();
 
     public Optional<Loaf> getLoaf(UUID uuid) {

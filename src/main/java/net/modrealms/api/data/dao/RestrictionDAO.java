@@ -9,7 +9,7 @@ import xyz.morphia.query.Query;
 import java.util.Optional;
 
 public class RestrictionDAO {
-    private static final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
+    private static final ModRealmsAPI api = ModRealmsAPI.getInstance();
     private static final Datastore datastore = api.getMongo().getDatastore();
 
     public Optional<RestrictedItem> getItemById(ObjectId objectId) {

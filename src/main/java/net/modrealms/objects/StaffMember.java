@@ -40,7 +40,7 @@ public class StaffMember {
     @Property("image_url")
     private String image;
     @Property("interface_id")
-    private Long interfaceId;
+    private long interfaceId;
     @Embedded("brownie_points")
     private List<BrowniePoint> browniePoints;
 

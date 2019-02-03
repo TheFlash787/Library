@@ -9,8 +9,8 @@ import xyz.morphia.query.Query;
 import java.util.Optional;
 
 public class StaffDAO {
-    private static final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
-    private static final Datastore datastore = api.getMongo().getDatastore();
+    private final ModRealmsAPI api = ModRealmsAPI.getInstance();
+    private final Datastore datastore = api.getMongo().getDatastore();
 
     public Optional<StaffMember> getStaffMemberById(ObjectId objectId) {
         Query<StaffMember> StaffMemberQuery = datastore.createQuery(StaffMember.class).filter("_id", objectId);
@@ -37,7 +37,7 @@ public class StaffDAO {
     }
 
     public void updateStaffMember(StaffMember StaffMember) {
-        System.out.println("Updating " + StaffMember.getName() + " to database and cache list");
         datastore.save(StaffMember);
+        System.out.println("Updated " + StaffMember.getName() + " to database and cache list");
     }
 }

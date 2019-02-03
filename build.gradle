@@ -15,6 +15,10 @@ repositories {
     maven { url = "https://plugins.gradle.org/m2/" }
     maven { url = "https://oss.sonatype.org/content/repositories/snapshots/" }
     maven { url 'https://jitpack.io' }
+    maven {
+        name "jitpack"
+        url "https://jitpack.io"
+    }
 }
 
 dependencies {
@@ -25,6 +29,7 @@ dependencies {
     compile group: 'net.md-5', name: 'bungeecord-api', version: '1.12-SNAPSHOT'
     compile 'joda-time:joda-time:2.10'
     compile 'net.dv8tion:JDA:3.8.0_423'
+    compile 'com.github.jitpack:gradle-simple:1.0.4'
     compile 'xyz.morphia.morphia:core:1.4.0'
     compile group: 'org.apache.commons', name: 'commons-text', version: '1.4'
     compile 'me.lucko.luckperms:luckperms-api:4.2'
