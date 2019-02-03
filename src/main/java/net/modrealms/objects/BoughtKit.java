@@ -1,7 +1,7 @@
-package net.modrealms.libs.objects;
+package net.modrealms.objects;
 
 import lombok.Data;
-import org.mongodb.morphia.annotations.Embedded;
+import xyz.morphia.annotations.Embedded;
 
 import java.util.Date;
 

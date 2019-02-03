@@ -1,4 +1,4 @@
-package net.modrealms.libs.objects;
+package net.modrealms.objects;
 
 public enum Activity {
     AWAY,

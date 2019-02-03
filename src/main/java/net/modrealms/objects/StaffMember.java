@@ -1,10 +1,8 @@
-package net.modrealms.libs.objects;
+package net.modrealms.objects;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.annotations.*;
+import xyz.morphia.annotations.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

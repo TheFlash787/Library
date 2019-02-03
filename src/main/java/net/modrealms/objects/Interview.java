@@ -1,14 +1,11 @@
-package net.modrealms.libs.objects;
+package net.modrealms.objects;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
-import org.joda.time.Instant;
 import org.joda.time.Interval;
-import org.mongodb.morphia.annotations.*;
-
-import java.util.Date;
+import xyz.morphia.annotations.*;
 
 @Entity(value = "interview", noClassnameStored = true)
 public class Interview {
