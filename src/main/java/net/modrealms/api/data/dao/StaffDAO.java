@@ -22,9 +22,9 @@ public class StaffDAO {
         return Optional.empty();
     }
 
-    public Optional<StaffMember> getStaffMember(String StaffMemberName) {
+    public Optional<StaffMember> getStaffMember(String name) {
 
-        Query<StaffMember> StaffMemberQuery = datastore.createQuery(StaffMember.class).field("StaffMember_name").equalIgnoreCase(StaffMemberName);
+        Query<StaffMember> StaffMemberQuery = datastore.createQuery(StaffMember.class).field("name").equalIgnoreCase(name);
         if(StaffMemberQuery.asList().size() == 1) {
             StaffMember updatedStaffMember = StaffMemberQuery.get();
             return Optional.of(updatedStaffMember);
