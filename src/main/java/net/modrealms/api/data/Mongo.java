@@ -21,10 +21,6 @@ public class Mongo {
     }
 
     private void connect() {
-
-        java.util.logging.Logger mongoLogger = java.util.logging.Logger.getLogger("org.mongodb.driver");
-        mongoLogger.setLevel(Level.SEVERE);
-
         // details
         String user = ModRealmsAPI.getInstance().getInfo().get("mongo_user");
         String pass = ModRealmsAPI.getInstance().getInfo().get("mongo_pass");
