@@ -88,7 +88,7 @@ public class ModRealmsAPI {
         }
     }
 
-    public DAOManager getDAOManager(){
+    public DAOManager getDaoManager(){
         try{
             return this.daoManager;
         } catch(NullPointerException e){
