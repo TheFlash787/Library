@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@Entity("staff-members") @Data
+@Entity(value = "staff-members", noClassnameStored = true) @Data
 public class StaffMember {
     @Id
     private ObjectId id;
@@ -18,7 +18,6 @@ public class StaffMember {
     private String name;
     @Property("ingame_name")
     private String ingameName;
-    @Embedded
     private Role role;
     @Property("email_address")
     private String email;
@@ -84,10 +83,5 @@ public class StaffMember {
         }
         return this.browniePoints;
     }
-
-    public void addPromotion(String formattedDate){
-        this.getPromotions().add(formattedDate);
-    }
-    public void addWarning(StaffWarning warning){this.getWarnings().add(warning);}
 
 }

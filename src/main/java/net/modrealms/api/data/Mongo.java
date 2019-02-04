@@ -52,5 +52,4 @@ public class Mongo {
         this.datastore = morphia.createDatastore(mongoClient, "modrealms");
         this.datastore.ensureIndexes();
     }
-
 }
