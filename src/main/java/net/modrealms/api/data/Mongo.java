@@ -39,7 +39,7 @@ public class Mongo {
         });
         morphia.getMapper().getOptions().setMapSubPackages(true);
 
-        // tell Morphia where to find your classes 
+        // tell Morphia where to find your classes
         // can be called multiple times with different packages or classes
         morphia.mapPackage("net.modrealms.objects");
 //        morphia.mapPackage("net.modrealms.pistoncore.Objects.mods");

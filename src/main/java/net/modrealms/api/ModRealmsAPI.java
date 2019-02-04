@@ -30,18 +30,18 @@ public class ModRealmsAPI {
         this.setInfo(info);
 
         if(sponge != null){
-            this.setSponge(sponge);
+            this.sponge = sponge;
             System.out.println("ModRealms API> Successfully loaded Sponge");
         } else System.out.println("ModRealms API> Sponge is not present!");
 
         if(bungee != null){
-            this.setBungee(bungee);
+            this.bungee = bungee;
             System.out.println("ModRealms API> Successfully loaded Bungee");
         } else System.out.println("ModRealms API> Bungee is not present!");
 
         if(setupMongo){
-            this.setMongo(new Mongo());
-            this.setDaoManager(new DAOManager());
+            this.mongo = new Mongo();
+            this.daoManager = new DAOManager();
             System.out.println("ModRealms API> Successfully loaded Mongo");
         } else System.out.println("ModRealms API> Mongo will not be loaded!");
 
@@ -82,6 +82,15 @@ public class ModRealmsAPI {
     public Mongo getMongo(){
         try{
             return this.mongo;
+        } catch(NullPointerException e){
+            System.out.println("API: Mongo/Morphia is not present!");
+            return null;
+        }
+    }
+
+    public DAOManager getDAOManager(){
+        try{
+            return this.daoManager;
         } catch(NullPointerException e){
             System.out.println("API: Mongo/Morphia is not present!");
             return null;
