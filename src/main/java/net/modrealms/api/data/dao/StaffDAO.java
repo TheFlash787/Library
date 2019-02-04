@@ -1,6 +1,7 @@
 package net.modrealms.api.data.dao;
 
 import net.modrealms.api.ModRealmsAPI;
+import net.modrealms.objects.BasePlayer;
 import net.modrealms.objects.StaffMember;
 import org.bson.types.ObjectId;
 import xyz.morphia.Datastore;
@@ -31,9 +32,9 @@ public class StaffDAO {
         return Optional.empty();
     }
 
-    public StaffMember newStaffMember() {
+    public StaffMember newStaffMember(String name, String email, String server, BasePlayer basePlayer) {
         //we dont update the StaffMember here as that will be done in the login logic
-        return new StaffMember();
+        return new StaffMember(name, email, server, basePlayer);
     }
 
     public void updateStaffMember(StaffMember StaffMember) {
