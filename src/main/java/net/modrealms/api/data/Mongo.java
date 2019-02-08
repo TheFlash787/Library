@@ -16,11 +16,11 @@ public class Mongo {
     @Getter
     private Datastore datastore;
 
-    public Mongo() {
-        connect();
+    public Mongo(Class className) {
+        connect(className);
     }
 
-    private void connect() {
+    private void connect(Class className) {
         // details
         String user = ModRealmsAPI.getInstance().getInfo().get("mongo_user");
         String pass = ModRealmsAPI.getInstance().getInfo().get("mongo_pass");
@@ -34,7 +34,7 @@ public class Mongo {
         morphia.getMapper().getOptions().setObjectFactory(new DefaultCreator() {
             @Override
             protected ClassLoader getClassLoaderForClass() {
-                return ModRealmsAPI.class.getClassLoader();
+                return className.getClassLoader();
             }
         });
         morphia.getMapper().getOptions().setMapSubPackages(true);

@@ -25,7 +25,7 @@ public class ModRealmsAPI {
     public ProxyServer bungee;
     public Map<String, String> info;
 
-    public ModRealmsAPI(Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
+    public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
         instance = this;
         this.setInfo(info);
 
@@ -40,7 +40,7 @@ public class ModRealmsAPI {
         } else System.out.println("ModRealms API> Bungee is not present!");
 
         if(setupMongo){
-            this.mongo = new Mongo();
+            this.mongo = new Mongo(project);
             this.daoManager = new DAOManager();
             System.out.println("ModRealms API> Successfully loaded Mongo");
         } else System.out.println("ModRealms API> Mongo will not be loaded!");
