@@ -27,6 +27,9 @@ public class Interview {
     @Getter @Setter
     private long channel;
 
+    @Getter @Setter
+    private boolean training;
+
     public Interview(){
 
     }
@@ -41,8 +44,6 @@ public class Interview {
         this.manager = manager;
         this.interviewee = player;
         this.startDate = new DateTime();
-    }
-    public void close(){
-        this.duration = new Interval(this.startDate, new DateTime()).toDuration().toStandardMinutes().toString() + " minutes";
+        this.training = false;
     }
 }
