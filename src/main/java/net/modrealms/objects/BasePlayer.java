@@ -10,66 +10,65 @@ import org.bson.types.ObjectId;
 import org.spongepowered.api.entity.living.player.Player;
 import net.modrealms.objects.Ticket;
 import xyz.morphia.annotations.*;
+import xyz.morphia.query.Query;
 
 import java.util.*;
 
-@Data
 @Entity(value = "players", noClassnameStored = true)
 public class BasePlayer {
     @Id
-    @Property("_id")
+    @Property("_id") @Getter @Setter
     private ObjectId id;
-    @Property("uuid")
+    @Property("uuid") @Getter @Setter
     @Indexed
     private UUID uuid;
-    @Property("username")
+    @Property("username") @Getter @Setter
     private String name;
-    @Property("is-staff")
+    @Property("is-staff") @Setter
     private boolean isStaff;
-    @Property("ticket_ids")
+    @Property("ticket_ids") @Getter @Setter
     private List<ObjectId> ticketIds;
-    @Embedded("kits_Bought")
+    @Embedded("kits_Bought") @Getter @Setter
     private List<BoughtKit> kitsBought;
-    @Property("toggles")
+    @Property("toggles") @Setter
     private HashMap<String, Boolean> toggles;
     @Property("orb_balance")
     private Integer orbBalance;
-    @Property("application_ids")
+    @Property("application_ids") @Getter @Setter
     private List<ObjectId> applicationIds;
-    @Property("current_milestone")
+    @Property("current_milestone") @Getter @Setter
     private ObjectId milestone;
-
-    @Property("completed-milestones")
+    @Property("completed-milestones")@Setter
     private List<ObjectId> completedMilestones;
     private HashMap<String, Integer> transportInventory;
-    @Property("donator_role")
+    @Property("donator_role") @Getter @Setter
     private DonatorRole donatorRole;
-    @Property("last_server")
+    @Property("last_server") @Getter @Setter
     private String lastServer;
-    @Property("verify_code")
+    @Property("verify_code") @Getter @Setter
     private String verifyCode;
-    @Property("display_name")
+    @Property("display_name") @Getter @Setter
     private String displayName;
-    @Property("progress_time")
+    @Property("progress_time") @Getter @Setter
     private Long progress;
-    @Property("discord_id")
+    @Property("discord_id") @Getter @Setter
     private String discordId;
-    @Property("pending_messages")
+    @Property("pending_messages") @Setter
     private List<String> pendingMessages;
-    @Property("first_vote_today")
+    @Property("first_vote_today") @Getter @Setter
     private Date firstVoteToday;
-    @Property("last_vote")
+    @Property("last_vote") @Getter @Setter
     private Date lastVote;
-    @Property("votes_today")
+    @Property("votes_today") @Getter @Setter
     private Integer votesToday;
-    @Property("votes")
+    @Property("votes") @Getter @Setter
     private Integer votes;
     private Boolean makingTicket;
-    @Property("last_leave_date")
+    @Property("last_leave_date") @Getter @Setter
     private Date lastJoinDate;
-    @Property("last_join_date")
+    @Property("last_join_date") @Getter @Setter
     private Date lastLeaveDate;
-    @Property("afktime_seconds")
+    @Property("afktime_seconds") @Getter @Setter
     private long minutesAFK;
 
     public BasePlayer(){
@@ -280,12 +279,15 @@ public class BasePlayer {
     }
 
     public Optional<StaffMember> getStaff(){
-        return Optional.of(ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(StaffMember.class).filter("baseplayer", this).get());
+        Query<StaffMember> query = ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(StaffMember.class).filter("baseplayer", this);
+        if(!query.asList().isEmpty()){
+            return Optional.of(query.get());
+        }
+        return Optional.empty();
     }
 
     public boolean isStaff(){
-        return !ModRealmsAPI.getInstance().getMongo().getDatastore().createQuery(StaffMember.class).filter("baseplayer",this).asList().isEmpty() || this.isStaff;
-
+        return this.getStaff().isPresent();
     }
 
     public HashMap<String, Integer> getTransportInventory(){

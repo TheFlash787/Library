@@ -1,6 +1,8 @@
 package net.modrealms.objects;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.bson.types.ObjectId;
 import xyz.morphia.annotations.*;
 
@@ -10,39 +12,38 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(value = "staff-members", noClassnameStored = true) @Data
+@Entity(value = "staff-members", noClassnameStored = true)
 public class StaffMember {
-    @Id
+    @Id @Getter @Setter
     private ObjectId id;
-    @Property("name")
+    @Property("name") @Getter @Setter
     private String name;
-    @Property("ingame_name")
+    @Property("ingame_name") @Getter @Setter
     private String ingameName;
-    @Embedded
+    @Embedded @Getter @Setter
     private Role role;
-    @Property("email_address")
+    @Property("email_address") @Getter @Setter
     private String email;
-    @Property("last_promotion_date")
+    @Property("last_promotion_date")@Setter
     private List<String> promotions;
-    @Property("hiring_date")
+    @Property("hiring_date") @Getter @Setter
     private String hiringDate;
-    @Embedded
+    @Embedded @Getter @Setter
     private Activity activity;
-    @Property("received_training")
+    @Property("received_training") @Getter @Setter
     private Boolean receivedTraining;
-    @Property("primary_server")
+    @Property("primary_server") @Getter @Setter
     private String primaryServer;
-//    @Embedded("staff_warnings")
-//    private List<StaffWarning> warnings;
-//    private UUID UUID;
-    @Reference
+    @Embedded("staff_warnings")@Setter
+    private List<StaffWarning> warnings;
+    @Reference @Getter @Setter
     private BasePlayer baseplayer;
-    @Property("image_url")
+    @Property("image_url") @Getter @Setter
     private String image;
-    @Property("interface_id")
+    @Property("interface_id") @Getter @Setter
     private Long interfaceId;
-//    @Embedded("brownie_points")
-//    private List<BrowniePoint> browniePoints;
+    @Embedded("brownie_points") @Setter
+    private List<BrowniePoint> browniePoints;
 
     public StaffMember(){
 
@@ -71,18 +72,18 @@ public class StaffMember {
         return this.promotions;
     }
 
-//    public List<StaffWarning> getWarnings(){
-//        if(this.warnings == null){
-//            this.warnings = new ArrayList<>();
-//        }
-//        return this.warnings;
-//    }
-//
-//    public List<BrowniePoint> getBrowniePoints(){
-//        if(this.browniePoints == null){
-//            this.browniePoints = new ArrayList<>();
-//        }
-//        return this.browniePoints;
-//    }
+    public List<StaffWarning> getWarnings(){
+        if(this.warnings == null){
+            this.warnings = new ArrayList<>();
+        }
+        return this.warnings;
+    }
+
+    public List<BrowniePoint> getBrowniePoints(){
+        if(this.browniePoints == null){
+            this.browniePoints = new ArrayList<>();
+        }
+        return this.browniePoints;
+    }
 
 }
