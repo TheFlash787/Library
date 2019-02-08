@@ -18,6 +18,7 @@ public class StaffMember {
     private String name;
     @Property("ingame_name")
     private String ingameName;
+    @Embedded
     private Role role;
     @Property("email_address")
     private String email;
@@ -31,17 +32,17 @@ public class StaffMember {
     private Boolean receivedTraining;
     @Property("primary_server")
     private String primaryServer;
-    @Embedded("staff_warnings")
-    private List<StaffWarning> warnings;
-    private UUID UUID;
+//    @Embedded("staff_warnings")
+//    private List<StaffWarning> warnings;
+//    private UUID UUID;
     @Reference
     private BasePlayer baseplayer;
     @Property("image_url")
     private String image;
     @Property("interface_id")
-    private long interfaceId;
-    @Embedded("brownie_points")
-    private List<BrowniePoint> browniePoints;
+    private Long interfaceId;
+//    @Embedded("brownie_points")
+//    private List<BrowniePoint> browniePoints;
 
     public StaffMember(){
 
@@ -58,8 +59,8 @@ public class StaffMember {
         this.activity = Activity.ACTIVE;
         this.receivedTraining = false;
         this.primaryServer = server;
-        this.warnings = new ArrayList<>();
-        this.browniePoints = new ArrayList<>();
+//        this.warnings = new ArrayList<>();
+//        this.browniePoints = new ArrayList<>();
         this.image = "https://modrealms.net/img/small.png";
     }
 
@@ -70,18 +71,18 @@ public class StaffMember {
         return this.promotions;
     }
 
-    public List<StaffWarning> getWarnings(){
-        if(this.warnings == null){
-            this.warnings = new ArrayList<>();
-        }
-        return this.warnings;
-    }
-
-    public List<BrowniePoint> getBrowniePoints(){
-        if(this.browniePoints == null){
-            this.browniePoints = new ArrayList<>();
-        }
-        return this.browniePoints;
-    }
+//    public List<StaffWarning> getWarnings(){
+//        if(this.warnings == null){
+//            this.warnings = new ArrayList<>();
+//        }
+//        return this.warnings;
+//    }
+//
+//    public List<BrowniePoint> getBrowniePoints(){
+//        if(this.browniePoints == null){
+//            this.browniePoints = new ArrayList<>();
+//        }
+//        return this.browniePoints;
+//    }
 
 }
