@@ -28,6 +28,9 @@ public class Interview {
     private long channel;
 
     @Getter @Setter
+    private long message;
+
+    @Getter @Setter
     private boolean training;
 
     public Interview(){
