@@ -47,6 +47,15 @@ public class BasePlayerDAO {
         return Optional.empty();
     }
 
+    public Optional<BasePlayer> getPlayerByDiscordId(String userId) {
+        Query<BasePlayer> playerQuery = datastore.createQuery(BasePlayer.class).filter("discord_id", userId);
+        if(playerQuery.asList().size() == 1) {
+            BasePlayer updatedBasePlayer = playerQuery.get();
+            return Optional.of(updatedBasePlayer);
+        }
+        return Optional.empty();
+    }
+
     public Optional<BasePlayer> getPlayerByName(String name) {
 
         Query<BasePlayer> playerQuery = datastore.createQuery(BasePlayer.class).field("username").equalIgnoreCase(name);
