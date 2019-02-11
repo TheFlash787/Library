@@ -39,6 +39,12 @@ public class Loaf {
         this.chunks = new ArrayList<>();
     }
 
+    public boolean isExpired() {
+        BasePlayer basePlayer = this.getOwner().getBasePlayer();
+        int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
+        return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
+    }
+
     public Boolean contains(Vector3i vector) {
         return locationData.getX() - range <= vector.getX() && vector.getX() <= locationData.getX() + range && locationData.getZ() - range <= vector.getZ() && vector.getZ() <= locationData.getZ() + range;
     }
