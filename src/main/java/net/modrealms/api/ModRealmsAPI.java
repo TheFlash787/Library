@@ -57,8 +57,8 @@ public class ModRealmsAPI {
 
         if(this.info.containsKey("ptero-api-key")){
             // Setup Pterodactyl API
-            this.setPteroAdminAPI(new PteroAdminAPI("https://manage.modrealms.net", this.info.get("ptero-api-key")));
-            this.setPteroUserAPI(new PteroUserAPI("https://manage.modrealms.net", this.info.get("ptero-api-key")));
+            this.setPteroAdminAPI(new PteroAdminAPI("https://manage.modrealms.net", this.info.get("ptero-admin-api-key")));
+            this.setPteroUserAPI(new PteroUserAPI("https://manage.modrealms.net", this.info.get("ptero-user-api-key")));
         }
     }
 
