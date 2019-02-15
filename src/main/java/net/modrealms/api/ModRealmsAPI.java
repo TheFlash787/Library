@@ -1,4 +1,6 @@
 package net.modrealms.api;
+import com.stanjg.ptero4j.PteroAdminAPI;
+import com.stanjg.ptero4j.PteroUserAPI;
 import lombok.Data;
 import lombok.Getter;
 import net.dv8tion.jda.core.JDA;
@@ -22,6 +24,8 @@ public class ModRealmsAPI {
     public Mongo mongo;
     public Logger logger;
     public DAOManager daoManager;
+    public PteroAdminAPI pteroAdminAPI;
+    public PteroUserAPI pteroUserAPI;
     public ProxyServer bungee;
     public Map<String, String> info;
 
@@ -50,6 +54,10 @@ public class ModRealmsAPI {
             this.setJDA(JDAConnection.API);
             System.out.println("ModRealms API>: Successfully loaded JDA");
         } else System.out.println("ModRealms API> JDA will not be loaded!");
+
+        // Setup Pterodactyl API
+        this.setPteroAdminAPI(new PteroAdminAPI("https://manage.modrealms.net", this.info.get("api-key")));
+        this.setPteroUserAPI(new PteroUserAPI("https://manage.modrealms.net", this.info.get("api-key")));
     }
 
     public JDA getJDA(){
