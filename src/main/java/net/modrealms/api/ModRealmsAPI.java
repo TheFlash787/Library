@@ -55,9 +55,11 @@ public class ModRealmsAPI {
             System.out.println("ModRealms API>: Successfully loaded JDA");
         } else System.out.println("ModRealms API> JDA will not be loaded!");
 
-        // Setup Pterodactyl API
-        this.setPteroAdminAPI(new PteroAdminAPI("https://manage.modrealms.net", this.info.get("api-key")));
-        this.setPteroUserAPI(new PteroUserAPI("https://manage.modrealms.net", this.info.get("api-key")));
+        if(this.info.containsKey("ptero-api-key")){
+            // Setup Pterodactyl API
+            this.setPteroAdminAPI(new PteroAdminAPI("https://manage.modrealms.net", this.info.get("ptero-api-key")));
+            this.setPteroUserAPI(new PteroUserAPI("https://manage.modrealms.net", this.info.get("ptero-api-key")));
+        }
     }
 
     public JDA getJDA(){
