@@ -28,7 +28,7 @@ public class OrbKitDAO {
         if(kitQuery.asList().size() >= 1) {
             OrbKit updatedOrbKit = kitQuery.get();
             if(kitQuery.asList().size() > 1){
-                logger.error("OrbKit "+name+" has more than one object!");
+                System.out.println("OrbKit "+name+" has more than one object!");
             }
             return Optional.of(updatedOrbKit);
         }
@@ -59,7 +59,7 @@ public class OrbKitDAO {
     }
 
     public void updateOrbKit(OrbKit OrbKit) {
-        ModRealmsAPI.getInstance().getLogger().info("Updating "+ OrbKit.getName()+" to database and cache list");
+        System.out.println("Updating "+ OrbKit.getName()+" to database and cache list");
         this.cachedOrbKits.put(OrbKit.getName(), OrbKit.getId());
         datastore.save(OrbKit);
     }

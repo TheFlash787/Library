@@ -26,7 +26,7 @@ public class AnnouncementDAO {
     }
 
     public void updateAnnouncement(Announcement Announcement){
-        conversify.getLogger().warn("Updating "+Announcement.getId()+" to database and cache list");
+        System.out.println("Updating "+Announcement.getId()+" to database and cache list");
         datastore.save(Announcement);
     }
 

@@ -26,7 +26,7 @@ public class ChannelDAO {
     }
 
     public void updateChannel(Channel Channel){
-        conversify.getLogger().warn("Updating "+Channel.getId()+" to database and cache list");
+        System.out.println("Updating "+Channel.getId()+" to database and cache list");
         datastore.save(Channel);
     }
 

@@ -22,7 +22,6 @@ public class ModRealmsAPI {
     public JDA JDA;
     public Game sponge;
     public Mongo mongo;
-    public Logger logger;
     public DAOManager daoManager;
     public PteroAdminAPI pteroAdminAPI;
     public PteroUserAPI pteroUserAPI;

@@ -33,7 +33,7 @@ public class PartyDAO {
     }
 
     public void updateParty(Party Party){
-        conversify.getLogger().warn("Updating "+Party.getId()+" to database and cache list");
+        System.out.println("Updating "+Party.getId()+" to database and cache list");
         datastore.save(Party);
     }
 

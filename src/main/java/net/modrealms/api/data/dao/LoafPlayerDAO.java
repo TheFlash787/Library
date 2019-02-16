@@ -19,7 +19,6 @@ public class LoafPlayerDAO {
     @Getter
     private HashMap<UUID, LoafPlayer> cachedPlayers = new HashMap<>();
     private final ModRealmsAPI api = net.modrealms.api.ModRealmsAPI.getInstance();
-    private final Logger logger = api.getLogger();
     private final Datastore datastore = api.getMongo().getDatastore();
 
     public Optional<LoafPlayer> getPlayer(UUID uuid) {
@@ -31,7 +30,7 @@ public class LoafPlayerDAO {
             if(playerQuery.asList().size() >= 1) {
                 LoafPlayer updatedLoafPlayer = playerQuery.get();
                 if(playerQuery.asList().size() > 1){
-                    logger.error(uuid+" has more than one player object!");
+                    System.out.println(uuid+" has more than one player object!");
                 }
                 return Optional.of(updatedLoafPlayer);
             }
@@ -72,7 +71,7 @@ public class LoafPlayerDAO {
     }
 
     public void updatePlayer(LoafPlayer basePlayer) {
-        logger.info("Updating "+ basePlayer.getName()+" to the database and cache list.");
+        System.out.println("Updating "+ basePlayer.getName()+" to the database and cache list.");
         datastore.save(basePlayer);
     }
 }

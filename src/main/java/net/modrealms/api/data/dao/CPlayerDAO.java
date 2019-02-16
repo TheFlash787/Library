@@ -42,7 +42,7 @@ public class CPlayerDAO {
     }
 
     public void updatePlayer(CPlayer CPlayer){
-        conversify.getLogger().warn("Updating "+CPlayer.getName()+" to database and cache list");
+        System.out.println("Updating "+CPlayer.getName()+" to database and cache list");
         datastore.save(CPlayer);
     }
 
