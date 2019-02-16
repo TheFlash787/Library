@@ -72,8 +72,7 @@ public class LoafPlayerDAO {
     }
 
     public void updatePlayer(LoafPlayer basePlayer) {
-        api.getInstance().getLogger().info("Updating "+ basePlayer.getName()+" to the database and cache list.");
-        this.cachedPlayers.put(basePlayer.getUuid(), basePlayer);
+        logger.info("Updating "+ basePlayer.getName()+" to the database and cache list.");
         datastore.save(basePlayer);
     }
 }
