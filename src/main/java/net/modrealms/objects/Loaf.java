@@ -2,12 +2,11 @@ package net.modrealms.objects;
 
 import com.flowpowered.math.vector.Vector3i;
 import lombok.Data;
+import net.modrealms.api.ModRealmsAPI;
+import org.spongepowered.api.entity.living.player.Player;
 import xyz.morphia.annotations.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 @Entity(value = "loaf-loaders", noClassnameStored = true)
@@ -41,6 +40,9 @@ public class Loaf {
 
     public boolean isExpired() {
         BasePlayer basePlayer = this.getOwner().getBasePlayer();
+        Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
+
+        if(playerOptional.isPresent() && playerOptional.get().isOnline()) return false;
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
     }
