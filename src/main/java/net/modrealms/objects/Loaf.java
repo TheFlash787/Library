@@ -42,7 +42,9 @@ public class Loaf {
         BasePlayer basePlayer = this.getOwner().getBasePlayer();
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
 
+        if(basePlayer.getDonatorRole() == null) return true;
         if(playerOptional.isPresent() && playerOptional.get().isOnline()) return false;
+
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
     }
