@@ -43,7 +43,7 @@ public class Loaf {
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
 
-        if(!disconnection){
+        if(!disconnection && playerOptional.isPresent() && playerOptional.get().isOnline()){
             System.out.println("Player is loaded, returning false.");
             return false;
         }
