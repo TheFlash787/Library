@@ -9,6 +9,7 @@ import org.apache.commons.text.RandomStringGenerator;
 import org.bson.types.ObjectId;
 import org.spongepowered.api.entity.living.player.Player;
 import net.modrealms.objects.Ticket;
+import org.spongepowered.api.item.inventory.Inventory;
 import xyz.morphia.annotations.*;
 import xyz.morphia.query.Query;
 
@@ -17,58 +18,92 @@ import java.util.*;
 @Entity(value = "players", noClassnameStored = true)
 public class BasePlayer {
     @Id
-    @Property("_id") @Getter @Setter
+    @Property("_id")
+    @Getter
     private ObjectId id;
-    @Property("uuid") @Getter @Setter
+
+    @Property("uuid")
     @Indexed
+    @Getter
     private UUID uuid;
-    @Property("username") @Getter @Setter
+
+    @Getter @Setter
+    @Property("username")
     private String name;
-    @Property("is-staff") @Setter
+
+    @Getter @Setter @Property("is-staff")
     private boolean isStaff;
-    @Property("ticket_ids") @Getter @Setter
+
+    @Setter @Property("ticket_ids")
     private List<ObjectId> ticketIds;
-    @Embedded("kits_Bought") @Getter @Setter
+
+    @Setter @Embedded("kits_Bought")
     private List<BoughtKit> kitsBought;
-    @Property("toggles") @Setter
+
+    @Setter @Property("toggles")
     private HashMap<String, Boolean> toggles;
+
     @Property("orb_balance")
     private Integer orbBalance;
-    @Property("application_ids") @Getter @Setter
+
+    @Setter @Property("application_ids")
     private List<ObjectId> applicationIds;
-    @Property("current_milestone") @Getter @Setter
+
+    @Setter @Property("current_milestone")
     private ObjectId milestone;
-    @Property("completed-milestones")@Setter
+
+    @Setter @Property("completed-milestones")
     private List<ObjectId> completedMilestones;
+
+    @Setter @Getter
     private HashMap<String, Integer> transportInventory;
-    @Property("donator_role") @Getter @Setter
+
+    @Setter @Getter @Transient
+    private Inventory transport;
+
+    @Setter @Getter @Property("donator_role")
     private DonatorRole donatorRole;
-    @Property("last_server") @Getter @Setter
+
+    @Getter @Setter @Property("last_server")
     private String lastServer;
-    @Property("verify_code") @Getter @Setter
+
+    @Getter @Setter @Property("verify_code")
     private String verifyCode;
-    @Property("display_name") @Getter @Setter
+
+    @Getter @Setter @Property("display_name")
     private String displayName;
-    @Property("progress_time") @Getter @Setter
+
+    @Getter @Setter @Property("progress_time")
     private Long progress;
-    @Property("discord_id") @Getter @Setter
+
+    @Getter @Setter @Property("discord_id")
     private String discordId;
-    @Property("pending_messages") @Setter
+
+    @Property("pending_messages")
     private List<String> pendingMessages;
-    @Property("first_vote_today") @Getter @Setter
+
+    @Getter @Setter @Property("first_vote_today")
     private Date firstVoteToday;
-    @Property("last_vote") @Getter @Setter
+
+    @Getter @Setter @Property("last_vote")
     private Date lastVote;
-    @Property("votes_today") @Getter @Setter
+
+    @Getter @Setter @Property("votes_today")
     private Integer votesToday;
-    @Property("votes") @Getter @Setter
+
+    @Getter @Setter @Property("votes")
     private Integer votes;
+
+    @Getter @Setter
     private Boolean makingTicket;
-    @Property("last_leave_date") @Getter @Setter
+
+    @Getter @Setter @Property("last_join_date")
     private Date lastJoinDate;
-    @Property("last_join_date") @Getter @Setter
+
+    @Getter @Setter @Property("last_leave_date")
     private Date lastLeaveDate;
-    @Property("afktime_seconds") @Getter @Setter
+
+    @Getter @Setter @Property("afktime_seconds")
     private long minutesAFK;
 
     public BasePlayer(){
@@ -76,6 +111,7 @@ public class BasePlayer {
     }
 
     public BasePlayer(Player player,Server server){
+
         RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('a', 'z').build();
 
         this.id = new ObjectId();
