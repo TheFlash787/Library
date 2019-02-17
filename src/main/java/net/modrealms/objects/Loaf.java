@@ -48,7 +48,7 @@ public class Loaf {
             return false;
         }
         if(!this.getOwner().getBoosters().isEmpty()){
-            System.out.println("Boosters are empty, returning false");
+            System.out.println("Boosters aren't empty, returning false");
             Booster booster = this.getOwner().getHighestBooster();
             hours = hours + booster.getHours();
             if(booster.getStartDate() == null){
@@ -60,7 +60,7 @@ public class Loaf {
             else{
                 System.out.println(basePlayer.getName() + " is currently using a " + booster.getHours() + " hour booster. ");
             }
-            return false;
+            // return false;
         }
         else if(this.getOwner().getBasePlayer().getDonatorRole() == null){
             System.out.println("Player isn't donator, returning true.");
