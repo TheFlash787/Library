@@ -46,7 +46,8 @@ public class Loaf {
         if(playerOptional.isPresent() && playerOptional.get().isOnline()){
             return false;
         }
-        else if(!this.getOwner().getBoosters().isEmpty()){
+
+        if(!this.getOwner().getBoosters().isEmpty()){
             Booster booster = this.getOwner().getHighestBooster();
             hours = hours + booster.getHours();
             if(booster.getStartDate() == null){
