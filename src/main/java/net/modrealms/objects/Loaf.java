@@ -43,11 +43,6 @@ public class Loaf {
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
 
-
-        if(playerOptional.isPresent() && playerOptional.get().isOnline()){
-            return false;
-        }
-
         if(!this.getOwner().getBoosters().isEmpty()){
             Booster booster = this.getOwner().getHighestBooster();
             hours = hours + booster.getHours();
@@ -65,8 +60,12 @@ public class Loaf {
         else if(this.getOwner().getBasePlayer().getDonatorRole() == null){
             return true;
         }
-
-        return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
+        else if(playerOptional.isPresent() && playerOptional.get().isOnline()){
+            return false;
+        }
+        else{
+            return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
+        }
     }
 
     public Boolean contains(Vector3i vector) {
