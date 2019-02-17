@@ -43,4 +43,14 @@ public class LoafPlayer {
     public Booster getHighestBooster(){
         return this.boosters.stream().max(Comparator.comparing(Booster::getHours)).get();
     }
+
+    public int getLoadHours(){
+        int hours = this.getBasePlayer().getDonatorRole() != null ? this.getBasePlayer().getDonatorRole().getLoadHours() : 0;
+        if(!this.getBoosters().isEmpty()){
+            if(this.getHighestBooster().getStartDate() != null){
+                hours = hours + this.getHighestBooster().getHours();
+            }
+        }
+        return hours;
+    }
 }
