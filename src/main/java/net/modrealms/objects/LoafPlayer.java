@@ -2,11 +2,12 @@ package net.modrealms.objects;
 
 import lombok.Data;
 import org.bson.types.ObjectId;
+import xyz.morphia.annotations.Embedded;
 import xyz.morphia.annotations.Entity;
 import xyz.morphia.annotations.Id;
 import xyz.morphia.annotations.Reference;
 
-import java.util.UUID;
+import java.util.*;
 
 @Entity("loaf-players") @Data
 public class LoafPlayer {
@@ -17,6 +18,8 @@ public class LoafPlayer {
     @Reference
     private BasePlayer basePlayer;
     private int balance;
+    @Embedded
+    private List<Booster> boosters;
 
     public LoafPlayer(){}
 
@@ -26,5 +29,13 @@ public class LoafPlayer {
         this.uuid = player.getUuid();
         this.basePlayer = player;
         this.balance = 0;
+        this.boosters = new ArrayList<>();
+    }
+
+    public List<Booster> getBoosters(){
+        if(this.boosters == null){
+            this.boosters = new ArrayList<>();
+        }
+        return this.boosters;
     }
 }
