@@ -1,5 +1,6 @@
 package net.modrealms.objects;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.types.ObjectId;
@@ -11,35 +12,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@Entity(value = "kits", noClassnameStored = true)
+@Entity(value = "kits", noClassnameStored = true) @Data
 public class OrbKit {
     @Id
-    @Getter
     @Property("_id")
     private ObjectId id;
 
-    @Getter @Setter
     private Integer price;
 
-    @Getter @Setter
     private String name;
 
-    @Getter @Setter
     private String note;
 
-    @Setter
     private List<String> commands;
 
-    @Setter
     private HashMap<String, String> kitItems;
 
-    @Setter
     private String placeholder;
 
-    @Setter
     private List<String> blacklist;
 
-    @Setter
     private List<String> requiredGroups;
 
     public OrbKit(){
