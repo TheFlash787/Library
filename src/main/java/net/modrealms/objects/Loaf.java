@@ -38,12 +38,12 @@ public class Loaf {
         this.chunks = new ArrayList<>();
     }
 
-    public boolean isExpired() {
+    public boolean isExpired(boolean disconnection) {
         BasePlayer basePlayer = this.getOwner().getBasePlayer();
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
 
-        if(playerOptional.isPresent() && playerOptional.get().isOnline() && playerOptional.get().isLoaded()){
+        if(!disconnection){
             System.out.println("Player is loaded, returning false.");
             return false;
         }
