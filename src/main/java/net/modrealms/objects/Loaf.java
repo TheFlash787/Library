@@ -57,11 +57,11 @@ public class Loaf {
             }
             return false;
         }
-        else if(playerOptional.isPresent() && playerOptional.get().isOnline()){
-            return false;
-        }
         else if(this.getOwner().getBasePlayer().getDonatorRole() != null){
             return true;
+        }
+        else if(playerOptional.isPresent() && playerOptional.get().isOnline()){
+            return false;
         }
 
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
