@@ -42,10 +42,26 @@ public class Loaf {
         BasePlayer basePlayer = this.getOwner().getBasePlayer();
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
 
-        if(basePlayer.getDonatorRole() == null) return true;
+        int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
+
+        if(!this.getOwner().getBoosters().isEmpty()){
+            Booster booster = this.getOwner().getHighestBooster();
+            hours = hours + booster.getHours();
+            if(booster.getStartDate() == null){
+                // Booster is new
+                booster.setStartDate(new Date());
+                System.out.println(basePlayer.getName() + " has started a new booster of " + booster.getHours() + " hours for " + booster.getDuration() + " days. They're total offline-loading limit is " + hours + " hours.");
+                ModRealmsAPI.getInstance().getDaoManager().getLoafPlayerDAO().updatePlayer(this.owner);
+            }
+            else{
+                System.out.println(basePlayer.getName() + " is currently using a " + booster.getHours() + " hour booster. ");
+            }
+            return false;
+        }
+
+        if(hours == 0) return true;
         if(playerOptional.isPresent() && playerOptional.get().isOnline()) return false;
 
-        int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
     }
 

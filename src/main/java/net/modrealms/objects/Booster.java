@@ -1,16 +1,20 @@
 package net.modrealms.objects;
 
 import lombok.Data;
+import xyz.morphia.annotations.Property;
 
 import java.util.Date;
 
 @Data
 public class Booster {
     private int hours;
-    private Date date;
+    @Property("start-date")
+    private Date startDate;
+    @Property("duration-days")
+    private int duration;
 
-    public Booster(int hours){
+    public Booster(int hours, int days){
         this.hours = hours;
-        this.date = new Date();
+        this.duration = days;
     }
 }
