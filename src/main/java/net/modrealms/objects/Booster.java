@@ -13,6 +13,10 @@ public class Booster {
     @Property("duration-days")
     private int duration;
 
+    public Booster(){
+        // Morphia Constructor
+    }
+
     public Booster(int hours, int days){
         this.hours = hours;
         this.duration = days;
