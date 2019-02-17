@@ -40,12 +40,7 @@ public class Loaf {
 
     public boolean isExpired() {
         BasePlayer basePlayer = this.getOwner().getBasePlayer();
-        Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
-
-        if(playerOptional.isPresent() && playerOptional.get().isOnline()){
-            return false;
-        }
 
         if(!this.getOwner().getBoosters().isEmpty()){
             Booster booster = this.getOwner().getHighestBooster();
