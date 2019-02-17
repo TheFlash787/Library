@@ -8,6 +8,7 @@ import xyz.morphia.annotations.Id;
 import xyz.morphia.annotations.Reference;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Entity("loaf-players") @Data
 public class LoafPlayer {
@@ -37,5 +38,9 @@ public class LoafPlayer {
             this.boosters = new ArrayList<>();
         }
         return this.boosters;
+    }
+
+    public Booster getHighestBooster(){
+        return this.boosters.stream().max(Comparator.comparing(Booster::getHours)).get();
     }
 }
