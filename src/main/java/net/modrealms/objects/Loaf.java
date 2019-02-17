@@ -43,6 +43,7 @@ public class Loaf {
         Optional<Player> playerOptional = ModRealmsAPI.getInstance().getSponge().getServer().getPlayer(basePlayer.getUuid());
 
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
+        if(playerOptional.isPresent() && playerOptional.get().isOnline()) return false;
 
         if(!this.getOwner().getBoosters().isEmpty()){
             Booster booster = this.getOwner().getHighestBooster();
@@ -60,7 +61,6 @@ public class Loaf {
         }
 
         if(hours == 0) return true;
-        if(playerOptional.isPresent() && playerOptional.get().isOnline()) return false;
 
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
     }
