@@ -34,6 +34,9 @@ public class OrbKit {
     private HashMap<String, String> kitItems;
 
     @Setter
+    private String placeholder;
+
+    @Setter
     private List<String> blacklist;
 
     @Setter
