@@ -68,8 +68,9 @@ public class Loaf {
         }
         else{
             System.out.println("Else, returning " + (System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L));
-            return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
         }
+
+        return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
     }
 
     public Boolean contains(Vector3i vector) {
