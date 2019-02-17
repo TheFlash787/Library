@@ -44,9 +44,11 @@ public class Loaf {
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
 
         if(playerOptional.isPresent() && playerOptional.get().isOnline() && playerOptional.get().isLoaded()){
+            System.out.println("Player is loaded, returning false.");
             return false;
         }
         if(!this.getOwner().getBoosters().isEmpty()){
+            System.out.println("Boosters are empty, returning false");
             Booster booster = this.getOwner().getHighestBooster();
             hours = hours + booster.getHours();
             if(booster.getStartDate() == null){
@@ -61,9 +63,11 @@ public class Loaf {
             return false;
         }
         else if(this.getOwner().getBasePlayer().getDonatorRole() == null){
+            System.out.println("Player isn't donator, returning true.");
             return true;
         }
         else{
+            System.out.println("Else, returning " + (System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L));
             return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;
         }
     }
