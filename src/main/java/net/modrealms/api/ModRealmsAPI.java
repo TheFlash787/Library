@@ -33,7 +33,7 @@ public class ModRealmsAPI {
     public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
         instance = this;
         this.setInfo(info);
-        logger = LoggerFactory.getLogger(this.getClass());
+        logger = LoggerFactory.getLogger(this.getClass().getName());
 
         if(sponge != null){
             this.sponge = sponge;
