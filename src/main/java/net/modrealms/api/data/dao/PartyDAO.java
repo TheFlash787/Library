@@ -33,7 +33,7 @@ public class PartyDAO {
     }
 
     public void updateParty(Party Party){
-        System.out.println("Updating "+Party.getId()+" to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+Party.getId()+" to database and cache list");
         datastore.save(Party);
     }
 

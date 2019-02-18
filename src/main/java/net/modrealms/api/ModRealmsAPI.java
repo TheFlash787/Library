@@ -9,6 +9,7 @@ import net.modrealms.api.data.DAOManager;
 import net.modrealms.api.data.Mongo;
 import net.modrealms.api.jda.JDAConnection;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spongepowered.api.Game;
 
 import javax.annotation.Nullable;
@@ -27,32 +28,34 @@ public class ModRealmsAPI {
     public PteroUserAPI pteroUserAPI;
     public ProxyServer bungee;
     public Map<String, String> info;
+    public Logger logger;
 
     public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
         instance = this;
         this.setInfo(info);
+        logger = LoggerFactory.getLogger(this.getClass());
 
         if(sponge != null){
             this.sponge = sponge;
-            System.out.println("ModRealms API> Successfully loaded Sponge");
-        } else System.out.println("ModRealms API> Sponge is not present!");
+            logger.info("Successfully loaded Sponge");
+        } else logger.info("Sponge is not present!");
 
         if(bungee != null){
             this.bungee = bungee;
-            System.out.println("ModRealms API> Successfully loaded Bungee");
-        } else System.out.println("ModRealms API> Bungee is not present!");
+            logger.info("Successfully loaded Bungee");
+        } else logger.info("Bungee is not present!");
 
         if(setupMongo){
             this.mongo = new Mongo(project);
             this.daoManager = new DAOManager();
-            System.out.println("ModRealms API> Successfully loaded Mongo");
-        } else System.out.println("ModRealms API> Mongo will not be loaded!");
+            logger.info("Successfully loaded Mongo");
+        } else logger.info("Mongo will not be loaded!");
 
         if(setupJDA){
             JDAConnection.connect();
             this.setJDA(JDAConnection.API);
-            System.out.println("ModRealms API>: Successfully loaded JDA");
-        } else System.out.println("ModRealms API> JDA will not be loaded!");
+            logger.info("Successfully loaded JDA");
+        } else logger.info("JDA will not be loaded!");
 
         if(this.info.containsKey("ptero-api-key")){
             // Setup Pterodactyl API
@@ -65,7 +68,7 @@ public class ModRealmsAPI {
         try{
             return this.JDA;
         } catch(NullPointerException e){
-            System.out.println("API: JDA is not present!");
+            logger.info("JDA is not present!");
             return null;
         }
     }
@@ -74,7 +77,7 @@ public class ModRealmsAPI {
         try{
             return this.sponge;
         } catch(NullPointerException e){
-            System.out.println("API: Sponge is not present!");
+            logger.info("Sponge is not present!");
             return null;
         }
     }
@@ -83,7 +86,7 @@ public class ModRealmsAPI {
         try{
             return this.bungee;
         } catch(NullPointerException e){
-            System.out.println("API: Bungee is not present!");
+            logger.info("Bungee is not present!");
             return null;
         }
     }
@@ -92,7 +95,7 @@ public class ModRealmsAPI {
         try{
             return this.mongo;
         } catch(NullPointerException e){
-            System.out.println("API: Mongo/Morphia is not present!");
+            logger.info("Mongo/Morphia is not present!");
             return null;
         }
     }
@@ -101,7 +104,7 @@ public class ModRealmsAPI {
         try{
             return this.daoManager;
         } catch(NullPointerException e){
-            System.out.println("API: Mongo/Morphia is not present!");
+            logger.info("Mongo/Morphia is not present!");
             return null;
         }
     }

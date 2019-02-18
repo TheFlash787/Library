@@ -90,7 +90,7 @@ public class TicketDAO {
             }
         }
         else{
-            System.out.println("User tried to delete a ticket but it did not exist.");
+            ModRealmsAPI.getInstance().getLogger().info("User tried to delete a ticket but it did not exist.");
 
             if(player != null){
                 player.sendMessage(Text.of(TextColors.RED, "Sorry, but this ticket has already been deleted from the database."));

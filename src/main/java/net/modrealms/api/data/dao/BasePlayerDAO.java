@@ -29,7 +29,7 @@ public class BasePlayerDAO {
             if(playerQuery.asList().size() >= 1) {
                 BasePlayer updatedBasePlayer = playerQuery.get();
                 if(playerQuery.asList().size() > 1){
-                    System.out.println(uuid+" has more than one player object!");
+                    ModRealmsAPI.getInstance().getLogger().info(uuid+" has more than one player object!");
                 }
                 return Optional.of(updatedBasePlayer);
             }
@@ -88,7 +88,7 @@ public class BasePlayerDAO {
     }
 
     public void updatePlayer(BasePlayer basePlayer) {
-        System.out.println("Updating "+ basePlayer.getName()+" to the database and cache list.");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+ basePlayer.getName()+" to the database and cache list.");
         this.cachedPlayers.put(basePlayer.getUuid(), basePlayer);
         datastore.save(basePlayer);
     }

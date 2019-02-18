@@ -44,30 +44,30 @@ public class Loaf {
         int hours = basePlayer.getDonatorRole() != null ? basePlayer.getDonatorRole().getLoadHours() : 0;
 
         if(!disconnection && playerOptional.isPresent() && playerOptional.get().isOnline()){
-            System.out.println("Player is loaded, returning false.");
+            ModRealmsAPI.getInstance().getLogger().info("Player is loaded, returning false.");
             return false;
         }
         if(!this.getOwner().getBoosters().isEmpty()){
-            System.out.println("Boosters aren't empty, returning false");
+            ModRealmsAPI.getInstance().getLogger().info("Boosters aren't empty, returning false");
             Booster booster = this.getOwner().getHighestBooster();
             hours = hours + booster.getHours();
             if(booster.getStartDate() == null){
                 // Booster is new
                 booster.setStartDate(new Date());
-                System.out.println(basePlayer.getName() + " has started a new booster of " + booster.getHours() + " hours for " + booster.getDuration() + " days. They're total offline-loading limit is " + this.owner.getLoadHours() + " hours.");
+                ModRealmsAPI.getInstance().getLogger().info(basePlayer.getName() + " has started a new booster of " + booster.getHours() + " hours for " + booster.getDuration() + " days. They're total offline-loading limit is " + this.owner.getLoadHours() + " hours.");
                 ModRealmsAPI.getInstance().getDaoManager().getLoafPlayerDAO().updatePlayer(this.owner);
             }
             else{
-                System.out.println(basePlayer.getName() + " is currently using a " + booster.getHours() + " hour booster. ");
+                ModRealmsAPI.getInstance().getLogger().info(basePlayer.getName() + " is currently using a " + booster.getHours() + " hour booster. ");
             }
             // return false;
         }
         else if(this.getOwner().getBasePlayer().getDonatorRole() == null){
-            System.out.println("Player isn't donator, returning true.");
+            ModRealmsAPI.getInstance().getLogger().info("Player isn't donator, returning true.");
             return true;
         }
         else{
-            System.out.println("Else, returning " + (System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L));
+            ModRealmsAPI.getInstance().getLogger().info("Else, returning " + (System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L));
         }
 
         return System.currentTimeMillis() - basePlayer.getLastLeaveDate().getTime() > hours * 3600000L;

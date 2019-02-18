@@ -26,7 +26,7 @@ public class ChannelDAO {
     }
 
     public void updateChannel(Channel Channel){
-        System.out.println("Updating "+Channel.getId()+" to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+Channel.getId()+" to database and cache list");
         datastore.save(Channel);
     }
 

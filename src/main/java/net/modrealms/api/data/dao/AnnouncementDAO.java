@@ -26,7 +26,7 @@ public class AnnouncementDAO {
     }
 
     public void updateAnnouncement(Announcement Announcement){
-        System.out.println("Updating "+Announcement.getId()+" to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+Announcement.getId()+" to database and cache list");
         datastore.save(Announcement);
     }
 

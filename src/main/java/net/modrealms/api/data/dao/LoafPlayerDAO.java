@@ -30,7 +30,7 @@ public class LoafPlayerDAO {
             if(playerQuery.asList().size() >= 1) {
                 LoafPlayer updatedLoafPlayer = playerQuery.get();
                 if(playerQuery.asList().size() > 1){
-                    System.out.println(uuid+" has more than one player object!");
+                    ModRealmsAPI.getInstance().getLogger().info(uuid+" has more than one player object!");
                 }
                 return Optional.of(updatedLoafPlayer);
             }
@@ -71,7 +71,7 @@ public class LoafPlayerDAO {
     }
 
     public void updatePlayer(LoafPlayer basePlayer) {
-        System.out.println("Updating "+ basePlayer.getName()+" to the database and cache list.");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+ basePlayer.getName()+" to the database and cache list.");
         datastore.save(basePlayer);
     }
 }

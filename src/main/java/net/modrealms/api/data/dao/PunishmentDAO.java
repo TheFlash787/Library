@@ -30,7 +30,7 @@ public class PunishmentDAO {
     }
 
     public void updateBan(Ban ban){
-        System.out.println("Updating ban to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating ban to database and cache list");
         datastore.save(ban);
     }
 
@@ -48,7 +48,7 @@ public class PunishmentDAO {
     }
 
     public void updateKick(Kick kick){
-        System.out.println("Updating ban to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating ban to database and cache list");
         datastore.save(kick);
     }
 
@@ -66,7 +66,7 @@ public class PunishmentDAO {
     }
 
     public void updateWarning(Warning warning){
-        System.out.println("Updating warning to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating warning to database and cache list");
         datastore.save(warning);
     }
 
@@ -84,7 +84,7 @@ public class PunishmentDAO {
     }
 
     public void updateMute(Mute mute){
-        System.out.println("Updating mute to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating mute to database and cache list");
         datastore.save(mute);
     }
 }

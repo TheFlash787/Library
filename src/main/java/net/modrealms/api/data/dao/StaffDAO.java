@@ -39,6 +39,6 @@ public class StaffDAO {
 
     public void updateStaffMember(StaffMember StaffMember) {
         datastore.save(StaffMember);
-        System.out.println("Updated " + StaffMember.getName() + " to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updated " + StaffMember.getName() + " to database and cache list");
     }
 }

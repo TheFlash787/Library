@@ -42,7 +42,7 @@ public class CPlayerDAO {
     }
 
     public void updatePlayer(CPlayer CPlayer){
-        System.out.println("Updating "+CPlayer.getName()+" to database and cache list");
+        ModRealmsAPI.getInstance().getLogger().info("Updating "+CPlayer.getName()+" to database and cache list");
         datastore.save(CPlayer);
     }
 
