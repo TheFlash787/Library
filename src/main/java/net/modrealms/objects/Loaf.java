@@ -80,4 +80,11 @@ public class Loaf {
     public Boolean contains(int chunkX, int chunkZ) {
         return locationData.getX() - range <= chunkX && chunkX <= locationData.getX() + range && locationData.getZ() - range <= chunkZ && chunkZ <= locationData.getZ() + range;
     }
+
+    public List<Vector3i> getChunks(){
+        if(this.chunks == null){
+            this.chunks = new ArrayList<>();
+        }
+        return this.chunks;
+    }
 }

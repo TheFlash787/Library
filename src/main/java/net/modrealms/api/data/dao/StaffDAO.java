@@ -7,6 +7,7 @@ import org.bson.types.ObjectId;
 import xyz.morphia.Datastore;
 import xyz.morphia.query.Query;
 
+import java.util.List;
 import java.util.Optional;
 
 public class StaffDAO {
@@ -40,5 +41,10 @@ public class StaffDAO {
     public void updateStaffMember(StaffMember StaffMember) {
         datastore.save(StaffMember);
         ModRealmsAPI.getInstance().getLogger().info("Updated " + StaffMember.getName() + " to database and cache list");
+    }
+
+    public void updateStaffMembers(List<StaffMember> staffMemberList) {
+        datastore.save(staffMemberList);
+        ModRealmsAPI.getInstance().getLogger().info("Updated " + staffMemberList.size() + " staff members to database and cache list");
     }
 }
