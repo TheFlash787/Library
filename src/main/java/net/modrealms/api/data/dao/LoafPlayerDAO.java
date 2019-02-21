@@ -49,7 +49,7 @@ public class LoafPlayerDAO {
 
     public Optional<LoafPlayer> getPlayerByName(String name) {
 
-        Query<LoafPlayer> playerQuery = datastore.createQuery(LoafPlayer.class).field("username").equalIgnoreCase(name);
+        Query<LoafPlayer> playerQuery = datastore.createQuery(LoafPlayer.class).field("name").equalIgnoreCase(name);
         if(playerQuery.asList().size() == 1) {
             LoafPlayer updatedLoafPlayer = playerQuery.get();
             return Optional.of(updatedLoafPlayer);
