@@ -44,6 +44,15 @@ public class LoafPlayer {
         return this.boosters.stream().max(Comparator.comparing(Booster::getHours)).get();
     }
 
+    public Optional<Booster> getActiveBooster(){
+        for(Booster booster: this.getBoosters()){
+            if(booster.getStartDate() != null){
+                return Optional.of(booster);
+            }
+        }
+        return Optional.empty();
+    }
+
     public int getLoadHours(){
         int hours = this.getBasePlayer().getDonatorRole() != null ? this.getBasePlayer().getDonatorRole().getLoadHours() : 0;
         if(!this.getBoosters().isEmpty()){

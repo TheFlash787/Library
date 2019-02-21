@@ -50,6 +50,9 @@ public class Loaf {
         if(!this.getOwner().getBoosters().isEmpty()){
             ModRealmsAPI.getInstance().getLogger().info("Boosters aren't empty, returning false");
             Booster booster = this.getOwner().getHighestBooster();
+            if(this.owner.getActiveBooster().isPresent() && !this.owner.getActiveBooster().get().equals(booster)){
+                booster = this.owner.getActiveBooster().get();
+            }
             hours = hours + booster.getHours();
             if(booster.getStartDate() == null){
                 // Booster is new
