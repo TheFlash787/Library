@@ -37,19 +37,19 @@ public class ModRealmsAPI {
     public Logger logger;
     public LuckPermsApi luckPermsApi;
 
-    public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
+    public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, LuckPermsApi luckPermsApi, boolean setupMongo, boolean setupJDA){
         instance = this;
         this.setInfo(info);
         logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
         if(sponge != null){
             this.sponge = sponge;
-            luckPermsApi = LuckPerms.getApi();
+            this.luckPermsApi = luckPermsApi;
             logger.info("Successfully loaded Sponge");
         } else logger.info("Sponge is not present!");
 
         if(bungee != null){
-            luckPermsApi = LuckPerms.getApi();
+            this.luckPermsApi = luckPermsApi;
             this.bungee = bungee;
             logger.info("Successfully loaded Bungee");
         } else logger.info("Bungee is not present!");
