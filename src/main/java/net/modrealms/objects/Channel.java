@@ -1,6 +1,9 @@
 package net.modrealms.objects;
 
+import io.netty.util.internal.StringUtil;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import me.lucko.luckperms.api.Contexts;
 import me.lucko.luckperms.api.LuckPermsApi;
 import me.lucko.luckperms.api.User;
@@ -17,8 +20,7 @@ import xyz.morphia.annotations.Property;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity("conversify-channels")
-@Data
+@Entity("conversify-channels") @Data
 public class Channel {
     @Id
     @Property("_id")
@@ -61,17 +63,26 @@ public class Channel {
     }
 
 
-    public void sendMessage(CPlayer sender,String content,MetaData metaData){
+
+    public void sendMessage(CPlayer sender,String content){
         if(this.getId().equals("DISCORD")){
             for(ProxiedPlayer onlinePlayers: ModRealmsAPI.getInstance().getBungee().getPlayers()){
                 CPlayer receiver = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(onlinePlayers.getUniqueId()).get();
-                String message = ChatColor.translateAlternateColorCodes('&',this.prefix+sender.getPrefix()+sender.getDisplayName()+sender.getSuffix()+" &f- "+content);
+                String message = ChatColor.translateAlternateColorCodes('&',this.prefix + sender.getPrefix() + sender.getDisplayName() + sender.getSuffix() + " &f- " + content);
                 if(overrideToggle||(receiver.getVisibleChannels().contains(this.getId())&&sender.getVisibleChannels().contains(this.getId()))){
                     onlinePlayers.sendMessage(message);
                 }
-                ModRealmsAPI.getInstance().getBungee().getLogger().info(message);
             }
-        }else{
+        }
+        else{
+            LuckPermsApi luckPermsApi = ModRealmsAPI.getInstance().getLuckPermsApi();
+            User user = luckPermsApi.getUser(sender.getUuid());
+
+            ContextManager cm = luckPermsApi.getContextManager();
+
+            //ImmutableContextSet contextSet = cm.lookupApplicableContext(user).orElse(cm.getStaticContext());
+            Contexts contexts = cm.lookupApplicableContexts(user).orElse(cm.getStaticContexts());
+            MetaData metaData = user.getCachedData().getMetaData(contexts);
             String prefix = metaData.getPrefix();
             String suffix = metaData.getSuffix();
 
@@ -97,7 +108,6 @@ public class Channel {
             }
         }
     }
-
     public void sendPlainMessage(BaseComponent[] text){
         for(ProxiedPlayer onlinePlayers: ModRealmsAPI.getInstance().getBungee().getPlayers()){
             CPlayer receiver = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(onlinePlayers.getUniqueId()).get();
@@ -116,7 +126,11 @@ public class Channel {
         }
     }
 
-    public void sendPartyMessage(CPlayer sender,String content,MetaData metaData){
+    public void sendPartyMessage(CPlayer sender,String content){
+
+        LuckPermsApi luckPermsApi = ModRealmsAPI.getInstance().getLuckPermsApi();
+        User user = luckPermsApi.getUser(sender.getUuid());
+        MetaData metaData = ModRealmsAPI.getInstance().getLuckPermsMetadata(user);
         String prefix = metaData.getPrefix();
         String suffix = metaData.getSuffix();
 
@@ -138,16 +152,24 @@ public class Channel {
         }
         if(success){
             for(ProxiedPlayer all: ModRealmsAPI.getInstance().getBungee().getPlayers()){
-                CPlayer receiver = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(all.getUniqueId()).get();
+                CPlayer receiver = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(user.getUuid()).get();
                 CPlayer cPlayer = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(all.getUniqueId()).get();
-                if(cPlayer.is_staff()&&! cPlayer.getUuid().equals(receiver.getUuid())&&! cPlayer.getUuid().equals(sender.getUuid())){
+                if(cPlayer.is_staff() && !cPlayer.getUuid().equals(receiver.getUuid()) && !cPlayer.getUuid().equals(sender.getUuid())){
                     all.sendMessage(ChatColor.translateAlternateColorCodes('&',"&6PartySpy &f - "+sender.getDisplayName()+" &f- "+content));
                 }
             }
         }
     }
 
-    public void sendLocalMessage(CPlayer sender,String content,MetaData metaData){
+    public void sendLocalMessage(CPlayer sender,String content){
+        LuckPermsApi luckPermsApi = ModRealmsAPI.getInstance().getLuckPermsApi();
+        User user = luckPermsApi.getUser(sender.getUuid());
+
+        ContextManager cm = luckPermsApi.getContextManager();
+
+        //ImmutableContextSet contextSet = cm.lookupApplicableContext(user).orElse(cm.getStaticContext());
+        Contexts contexts = cm.lookupApplicableContexts(user).orElse(cm.getStaticContexts());
+        MetaData metaData = user.getCachedData().getMetaData(contexts);
         String prefix = metaData.getPrefix();
         String suffix = metaData.getSuffix();
 
@@ -155,7 +177,7 @@ public class Channel {
             suffix = "";
         }
 
-        for(ProxiedPlayer onlinePlayers: ModRealmsAPI.getInstance().getBungee().getInstance().getPlayer(sender.getUuid()).getServer().getInfo().getPlayers()){
+        for(ProxiedPlayer onlinePlayers: ModRealmsAPI.getInstance().getBungee().getPlayer(sender.getUuid()).getServer().getInfo().getPlayers()){
             CPlayer receiver = ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().getPlayer(onlinePlayers.getUniqueId()).get();
             if(overrideToggle||(receiver.getVisibleChannels().contains(this.getId())&&sender.getVisibleChannels().contains(this.getId()))){
                 onlinePlayers.sendMessage(ChatColor.translateAlternateColorCodes('&',this.prefix+prefix+sender.getDisplayName()+suffix+" &f- "+content));

@@ -3,6 +3,12 @@ import com.stanjg.ptero4j.PteroAdminAPI;
 import com.stanjg.ptero4j.PteroUserAPI;
 import lombok.Data;
 import lombok.Getter;
+import me.lucko.luckperms.LuckPerms;
+import me.lucko.luckperms.api.Contexts;
+import me.lucko.luckperms.api.LuckPermsApi;
+import me.lucko.luckperms.api.User;
+import me.lucko.luckperms.api.caching.MetaData;
+import me.lucko.luckperms.api.context.ContextManager;
 import net.dv8tion.jda.core.JDA;
 import net.md_5.bungee.api.ProxyServer;
 import net.modrealms.api.data.DAOManager;
@@ -29,6 +35,7 @@ public class ModRealmsAPI {
     public ProxyServer bungee;
     public Map<String, String> info;
     public Logger logger;
+    public LuckPermsApi luckPermsApi;
 
     public ModRealmsAPI(Class project, Map<String, String> info, @Nullable ProxyServer bungee, @Nullable Game sponge, boolean setupMongo, boolean setupJDA){
         instance = this;
@@ -37,10 +44,12 @@ public class ModRealmsAPI {
 
         if(sponge != null){
             this.sponge = sponge;
+            luckPermsApi = LuckPerms.getApi();
             logger.info("Successfully loaded Sponge");
         } else logger.info("Sponge is not present!");
 
         if(bungee != null){
+            luckPermsApi = LuckPerms.getApi();
             this.bungee = bungee;
             logger.info("Successfully loaded Bungee");
         } else logger.info("Bungee is not present!");
@@ -107,5 +116,12 @@ public class ModRealmsAPI {
             logger.info("Mongo/Morphia is not present!");
             return null;
         }
+    }
+
+    public MetaData getLuckPermsMetadata(User user){
+        LuckPermsApi luckPermsApi = this.getLuckPermsApi();
+        ContextManager cm = luckPermsApi.getContextManager();
+        Contexts contexts = cm.lookupApplicableContexts(user).orElse(cm.getStaticContexts());
+        return user.getCachedData().getMetaData(contexts);
     }
 }
