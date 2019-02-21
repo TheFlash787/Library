@@ -1,6 +1,7 @@
 package net.modrealms.objects;
 
 public enum Role {
+    RESIGNED(0),
     HELPER(1),
     MODERATOR(2),
     SUPERVISOR(3),
