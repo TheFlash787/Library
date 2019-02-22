@@ -31,15 +31,13 @@ public class Party {
         //Morhpia Constructor
     }
 
-    public Party(UUID leader){
+    public Party(CPlayer leader){
         this.id = new ObjectId();
-        this.name = "New Party";
+        this.name = leader.getName() + "'s New Party";
         this.players = new ArrayList<>();
-        this.leader = leader;
-        this.players.add(leader);
-//        CPlayer cLeader = cPlayerDAO.getPlayer(leader).get();
-//        cLeader.setPartyId(this.id);
-//        cPlayerDAO.updatePlayer(cLeader);
+        this.leader = leader.getUuid();
+        this.players.add(leader.getUuid());
+        leader.setPartyId(this.id);
+        ModRealmsAPI.getInstance().getDaoManager().getCPlayerDAO().updatePlayer(leader);
     }
-
 }

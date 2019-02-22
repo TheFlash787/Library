@@ -17,9 +17,7 @@ import net.modrealms.api.jda.JDAConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.api.Game;
-
 import javax.annotation.Nullable;
-import java.util.HashMap;
 import java.util.Map;
 
 @Data
